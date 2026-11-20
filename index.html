@@ -28,10 +28,10 @@
     </nav>
 
     <div class="header-acciones">
-      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="GitHub">
+      <a href="https://github.com/spesomay" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="GitHub">
         <i class="fab fa-github"></i>
       </a>
-      <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="LinkedIn">
+      <a href="https://www.linkedin.com/in/maylen-speso-a3630332b/" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="LinkedIn">
         <i class="fab fa-linkedin-in"></i>
       </a>
       <button id="theme-toggle" class="btn-theme" title="Modo oscuro / claro" aria-label="Cambiar tema">
@@ -107,13 +107,13 @@
           <!-- Fila de redes abajo -->
           <div class="conectemos-fila">
             <span class="conectemos-label">CONECTEMOS:</span>
-            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+            <a href="https://github.com/spesomay" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
               <i class="fab fa-github"></i>
             </a>
-            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+            <a href="https://www.linkedin.com/in/maylen-speso-a3630332b/" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
               <i class="fab fa-linkedin-in"></i>
             </a>
-            <a href="contacto.html" class="social-link" title="Contacto">
+            <a href="email.html" class="social-link" title="Ir al formulario de contacto" aria-label="Contacto">
               <i class="fas fa-envelope"></i>
             </a>
           </div>
@@ -149,7 +149,7 @@
         <div class="sobre-col-izq">
           <div class="foto-personaje-limpia">
             <img src="img/hola.png" alt="Ilustración Maylen" class="foto-clara">
-            <img src="img/hola-dark.png" alt="Ilustración Maylen modo oscuro" class="foto-oscura">
+            <img src="img/ModoOscuroYo.png" alt="Ilustración Maylen modo oscuro" class="foto-oscura">
           </div>
 
           <div class="card-formacion">
@@ -403,15 +403,21 @@
 
       <div class="grid-proyectos">
         <!-- Proyecto 1: App-Mamá -->
-        <article class="card-proyecto">
-          <div class="proyecto-img">
-            <div class="proyecto-img-placeholder">
-              <i class="fas fa-cake-candles"></i>
-              <span>App-Mamá</span>
+        <article class="card-proyecto" data-demo-url="https://app-mama-jgjz.vercel.app/">
+          <a href="https://app-mama-jgjz.vercel.app/" target="_blank" rel="noopener noreferrer" class="proyecto-img-enlace" aria-label="Ver demo de App-Mamá en Vercel">
+            <div class="proyecto-img">
+              <div class="proyecto-img-placeholder">
+                <i class="fas fa-cake-candles"></i>
+                <span>App-Mamá</span>
+              </div>
             </div>
-          </div>
+          </a>
           <div class="proyecto-info">
-            <h3 class="letra1">APP-MAMÁ</h3>
+            <h3 class="letra1">
+              <a href="https://app-mama.vercel.app" target="_blank" rel="noopener noreferrer" class="proyecto-titulo-enlace">
+                APP-MAMÁ
+              </a>
+            </h3>
             <p class="letra2">
               Plataforma web full-stack de comercio electrónico y gestión de pedidos personalizada para un negocio de repostería. Incluye catálogo interactivo, carrito dinámico y panel de control de pedidos.
             </p>
@@ -422,23 +428,27 @@
               <span>MongoDB</span>
             </div>
             <div class="proyecto-links">
-              <a href="email.html" class="link-btn" title="Consultar demo">
-                <i class="fas fa-external-link-alt"></i> Demo
-              </a>
-              <a href="https://github.com/tu-usuario/app-mama" target="_blank" rel="noopener noreferrer" class="link-btn" title="Ver código en GitHub">
-                <i class="fab fa-github"></i> Código
+              <a href="https://app-mama-jgjz.vercel.app/" target="_blank" rel="noopener noreferrer" class="link-btn link-demo" title="Visitar la web en vivo de App-Mamá en Vercel">
+                <span>Visitar Web / Demo</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
         </article>
 
         <!-- Proyecto 2: UrbanaGest -->
-        <article class="card-proyecto">
-          <div class="proyecto-img">
-            <img src="img/UrbanaGest.png" alt="Vista previa UrbanaGest">
-          </div>
+        <article class="card-proyecto" data-demo-url="https://urbanagest.vercel.app">
+          <a href="https://urbanagest.vercel.app" target="_blank" rel="noopener noreferrer" class="proyecto-img-enlace" aria-label="Ver demo de UrbanaGest">
+            <div class="proyecto-img">
+              <img src="img/UrbanaGest.png" alt="Vista previa UrbanaGest">
+            </div>
+          </a>
           <div class="proyecto-info">
-            <h3 class="letra1">URBANA GEST</h3>
+            <h3 class="letra1">
+              <a href="https://urbanagest.vercel.app" target="_blank" rel="noopener noreferrer" class="proyecto-titulo-enlace">
+                URBANA GEST
+              </a>
+            </h3>
             <p class="letra2">
               Plataforma web para gestionar trámites municipales, solicitar turnos, realizar reclamos barriales y consultar noticias y eventos de forma simple, rápida y accesible.
             </p>
@@ -449,23 +459,27 @@
               <span>UX/UI</span>
             </div>
             <div class="proyecto-links">
-              <a href="email.html" class="link-btn" title="Consultar demo">
-                <i class="fas fa-external-link-alt"></i> Demo
-              </a>
-              <a href="https://github.com/tu-usuario/urbanagest" target="_blank" rel="noopener noreferrer" class="link-btn" title="Ver código en GitHub">
-                <i class="fab fa-github"></i> Código
+              <a href="https://urbanagest.vercel.app" target="_blank" rel="noopener noreferrer" class="link-btn link-demo" title="Visitar la web en vivo de UrbanaGest">
+                <span>Visitar Web / Demo</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
         </article>
 
         <!-- Proyecto 3: MOOD -->
-        <article class="card-proyecto">
-          <div class="proyecto-img">
-            <img src="img/MOOD.png" alt="Vista previa MOOD">
-          </div>
+        <article class="card-proyecto" data-demo-url="https://mood-app.vercel.app">
+          <a href="https://mood-app.vercel.app" target="_blank" rel="noopener noreferrer" class="proyecto-img-enlace" aria-label="Ver demo de MOOD">
+            <div class="proyecto-img">
+              <img src="img/MOOD.png" alt="Vista previa MOOD">
+            </div>
+          </a>
           <div class="proyecto-info">
-            <h3 class="letra1">MOOD</h3>
+            <h3 class="letra1">
+              <a href="https://mood-app.vercel.app" target="_blank" rel="noopener noreferrer" class="proyecto-titulo-enlace">
+                MOOD
+              </a>
+            </h3>
             <p class="letra2">
               Plataforma web que recomienda eventos y actividades en distintas partes del país según el estado de ánimo y las preferencias del usuario.
             </p>
@@ -475,11 +489,9 @@
               <span>JavaScript</span>
             </div>
             <div class="proyecto-links">
-              <a href="email.html" class="link-btn" title="Consultar demo">
-                <i class="fas fa-external-link-alt"></i> Demo
-              </a>
-              <a href="https://github.com/tu-usuario/mood" target="_blank" rel="noopener noreferrer" class="link-btn" title="Ver código en GitHub">
-                <i class="fab fa-github"></i> Código
+              <a href="https://mood-app.vercel.app" target="_blank" rel="noopener noreferrer" class="link-btn link-demo" title="Visitar la web en vivo de MOOD">
+                <span>Visitar Web / Demo</span>
+                <i class="fas fa-arrow-up-right-from-square"></i>
               </a>
             </div>
           </div>
@@ -494,15 +506,15 @@
         <p class="letra2 footer-rol">Desarrolladora Web Full-Stack | Estudiante de Licenciatura en Sistemas</p>
 
         <div class="footer-redes">
-          <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link"
+          <a href="https://github.com/spesomay" target="_blank" rel="noopener noreferrer" class="social-link"
             title="GitHub">
             <i class="fab fa-github"></i>
           </a>
-          <a href="https://www.linkedin.com/in/maylen-speso-a3630332b/?isSelfProfile=true" target="_blank"
+          <a href="https://www.linkedin.com/in/maylen-speso-a3630332b/" target="_blank"
             rel="noopener noreferrer" class="social-link" title="LinkedIn">
             <i class="fab fa-linkedin-in"></i>
           </a>
-          <a href="email.html" class="social-link" title="Email">
+          <a href="email.html" class="social-link" title="Ir al formulario de contacto" aria-label="Contacto por formulario">
             <i class="fas fa-envelope"></i>
           </a>
         </div>

@@ -1,6 +1,7 @@
 /**
  * ==========================================================================
- * CONTACT.JS - CONEXIÓN CON EL SERVIDOR BACKEND (NODE.JS / EXPRESS)
+ * CONTACT.JS - FORMULARIO DE CONTACTO 100% ESTÁTICO (FORMSUBMIT AJAX)
+ * Compatible con GitHub Pages y Live Server (sin necesidad de servidor Node.js)
  * ==========================================================================
  */
 
@@ -19,45 +20,56 @@ document.addEventListener("DOMContentLoaded", () => {
     const asunto = document.getElementById("asunto")?.value.trim() || "Contacto desde el Portafolio";
     const mensaje = document.getElementById("mensaje")?.value.trim();
 
-    // Feedback visual de carga
+    if (!nombre || !email || !mensaje) {
+      if (alerta) {
+        alerta.className = "form-alerta error";
+        alerta.innerHTML = `<i class="fas fa-exclamation-circle"></i> <span>Por favor, completá los campos obligatorios.</span>`;
+        alerta.style.display = "flex";
+      }
+      return;
+    }
+
     const textoOriginal = btnEnviar.innerHTML;
     btnEnviar.disabled = true;
     btnEnviar.innerHTML = `<span>Enviando mensaje...</span> <i class="fas fa-spinner fa-spin"></i>`;
-    alerta.style.display = "none";
-    alerta.className = "form-alerta";
-
-    // Detectar URL del backend (si corre en puerto 5000 o en el mismo origen)
-    const backendUrl =
-      window.location.port === "5000"
-        ? "/api/contact"
-        : "http://localhost:5000/api/contact";
+    if (alerta) {
+      alerta.style.display = "none";
+      alerta.className = "form-alerta";
+    }
 
     try {
-      const response = await fetch(backendUrl, {
+      // Envío asíncrono con FormSubmit AJAX (100% estático, directo a tu correo)
+      const response = await fetch("https://formsubmit.co/ajax/maylenspeso@gmail.com", {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
+          "Accept": "application/json"
         },
-        body: JSON.stringify({ nombre, email, asunto, mensaje })
+        body: JSON.stringify({
+          nombre,
+          email,
+          asunto,
+          mensaje,
+          _subject: `Nuevo mensaje de ${nombre} desde tu Portafolio Web`
+        })
       });
 
       const data = await response.json();
 
-      if (response.ok && data.success) {
-        alerta.className = "form-alerta exito";
-        alerta.innerHTML = `<i class="fas fa-check-circle"></i> <span>${data.message || "¡Mensaje enviado con éxito!"}</span>`;
-        alerta.style.display = "flex";
+      if (response.ok) {
+        if (alerta) {
+          alerta.className = "form-alerta exito";
+          alerta.innerHTML = `<i class="fas fa-check-circle"></i> <span>¡Mensaje enviado con éxito! Te responderé a la brevedad.</span>`;
+          alerta.style.display = "flex";
+        }
         form.reset();
       } else {
-        throw new Error(data.message || "Ocurrió un error al procesar el mensaje.");
+        throw new Error(data.message || "Error al enviar mensaje");
       }
     } catch (error) {
-      console.warn("No se pudo conectar con el backend local:", error);
-      
-      // Fallback amigable si el servidor no está encendido
-      alerta.className = "form-alerta error";
-      alerta.innerHTML = `<i class="fas fa-exclamation-circle"></i> <span>Servidor backend no detectado en el puerto 5000. Iniciá el servidor con <code>npm start</code> o escribime directo a <strong>maylenspeso@gmail.com</strong>.</span>`;
-      alerta.style.display = "flex";
+      console.warn("Envío por fetch falló, utilizando envío por formulario nativo:", error);
+      // Fallback nativo
+      form.submit();
     } finally {
       btnEnviar.disabled = false;
       btnEnviar.innerHTML = textoOriginal;

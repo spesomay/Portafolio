@@ -1,83 +1,89 @@
 # 🚀 Portafolio Web Personal — Maylen Speso
 
 > **Desarrolladora Web Full-Stack | Estudiante de Licenciatura en Sistemas**
+> Despliegue en GitHub Pages: `https://spesomay.github.io/portafolio/`
 
-Bienvenida a tu portafolio web con tu **diseño original conservado al 100%**, el diseño de **Habilidades y Herramientas** optimizado y un **servidor backend completo y funcional** desarrollado en Node.js y Express.
-
----
-
-## 🛠️ ¿Qué incluye esta versión?
-
-1. **Tu diseño visual original:**
-   - Paleta de colores pastel y gradientes distintivos (`#7EDFFF`, `#FFB6E6`, `#FFEAB5`).
-   - Cabecera fija (*sticky header*) con desplazamiento suave (*smooth scroll*).
-   - Botón toggle de tema claro y oscuro con persistencia en `localStorage`.
-   - SVG blob animado y formas decorativas flotantes (`blob1` a `blob6`, círculos).
-   - Foto personal en círculo de 350px y botones con bordes en gradiente.
-   - Sección "Sobre mí" con alternancia de personaje (`hola.png` y `ModoOscuroYo.png`).
-   - Tus tarjetas de proyectos con bordes en gradiente y hover elevation:
-     - **App-Mamá** (Full-Stack E-commerce para repostería en React, Node.js, Express, MongoDB).
-     - **UrbanaGest** (Gestión municipal con `UrbanaGest.png`).
-     - **MOOD** (Recomendador de actividades con `MOOD.png`).
-
-2. **Sección de Habilidades y Herramientas (Conservada de la propuesta):**
-   - Agrupada de forma clara y profesional:
-     - **Front-End:** React.js, JavaScript, HTML5, CSS3.
-     - **Back-End & DB:** Node.js, Express.js, MongoDB, Python.
-     - **Herramientas:** Git, GitHub, Postman, Responsive Web.
-   - Adaptada visualmente con tarjetas de borde en gradiente a juego con tu paleta.
-
-3. **Backend en Node.js & Express 100% Funcional:**
-   - **Archivo:** `server.js`
-   - **Servidor estático:** Sirve todo tu portafolio en `http://localhost:5000`.
-   - **Endpoint de Contacto:** `POST /api/contact`
-     - Recibe los datos del formulario de `email.html` (nombre, email, asunto, mensaje).
-     - Valida los campos.
-     - Guarda automáticamente los mensajes recibidos en `data/messages.json` para que nunca pierdas un mensaje, incluso sin configurar correos.
-     - Soporta envío automático a tu casilla mediante **Nodemailer** si completas las credenciales en `.env`.
-   - **Endpoint de Diagnóstico:** `GET /api/health`
-   - **Endpoint para ver mensajes:** `GET /api/messages`
+Portafolio web personal construido con **HTML5 semántico, CSS3 moderno y JavaScript puro (vanilla)**, optimizado para cargar instantáneamente en **GitHub Pages** y en local mediante la extensión **Live Server** de Visual Studio Code.
 
 ---
 
-## 🚦 Cómo poner en marcha el Backend
+## 🌟 Características
 
-### 1. Iniciar el servidor
-En tu terminal de Visual Studio Code (o PowerShell / CMD), ejecuta:
+1. **100% Estático y Ágil:**
+   - Sin dependencias de Node.js, librerías pesadas ni procesos de compilación (*build*).
+   - Rutas 100% relativas para funcionar en cualquier subdirectorio (ej. `/portafolio/`).
+   - Scroll vertical único y fluido, sin dobles barras ni desbordes laterales.
 
-```bash
-npm start
-```
-*(O también: `node server.js`)*
+2. **Proyectos Interactivos (Demos en Vivo):**
+   - **App-Mamá:** E-commerce y plataforma de pedidos para repostería desplegada en Vercel (`https://app-mama.vercel.app`).
+   - **UrbanaGest:** Plataforma web de gestión de trámites municipales (`https://urbanagest.vercel.app`).
+   - **MOOD:** Recomendador interactivo de actividades según el estado de ánimo (`https://mood-app.vercel.app`).
+   - Al hacer clic o tocar en cualquier área de la tarjeta o en su botón *"Visitar Web / Demo"*, se abre la aplicación en una pestaña nueva (`target="_blank"` y `rel="noopener noreferrer"`).
+   - Sin botones de código para mantener la atención del reclutador en la experiencia de usuario de tus proyectos.
 
-Verás el siguiente mensaje de confirmación:
+3. **Modo Oscuro / Claro con Persistencia:**
+   - Botón toggle de alto contraste que conmuta entre modo oscuro y claro.
+   - Persistencia de la preferencia del usuario en `localStorage`.
+   - Alternancia de la ilustración del personaje en "Sobre mí" (`img/hola.png` en modo claro y `img/ModoOscuroYo.png` en modo oscuro).
+
+4. **Contacto Integrado y Formulario Funcional:**
+   - Todos los botones de email del portafolio redirigen directamente a `email.html`.
+   - Formulario conectado a **FormSubmit AJAX**: envía los mensajes directamente a `maylenspeso@gmail.com` desde el navegador con notificación en pantalla sin recargar la página.
+
+5. **Acceso a CV:**
+   - Descarga directa de tu currículum desde `pdf/Speso Maylen -cv.pdf`.
+
+---
+
+## 📁 Estructura Limpia del Repositorio
+
 ```text
-🚀 Servidor backend corriendo exitosamente en: http://localhost:5000
-📁 Archivos estáticos disponibles en http://localhost:5000
-📬 Endpoint de contacto activo en: http://localhost:5000/api/contact
+portafolio/
+│
+├── index.html                   # Página principal (Hero, Sobre mí, Habilidades, Proyectos)
+├── email.html                   # Página de contacto
+├── README.md                    # Documentación del proyecto
+│
+├── styles/
+│   ├── style.css                # Estilos globales, variables, diseño responsive y dark mode
+│   └── email.css                # Estilos específicos del formulario de contacto
+│
+├── js/
+│   ├── js.js                    # Animación blob, modo oscuro, scroll suave y clics de proyectos
+│   └── contact.js               # Envío asíncrono del formulario mediante FormSubmit AJAX
+│
+├── img/                         # Ilustraciones, fotos, íconos SVG y capturas
+│   ├── hola.png
+│   ├── ModoOscuroYo.png
+│   ├── hola-dark.png
+│   ├── moon.svg
+│   ├── sun.svg
+│   ├── yo2024.jpg
+│   ├── UrbanaGest.png
+│   └── MOOD.png
+│
+└── pdf/
+    ├── Speso Maylen -cv.pdf     # Tu currículum listo para descarga
+    └── Speso Maylen-cv-2026.pdf
 ```
-
-### 2. Probar el portafolio y el formulario
-1. Abre tu navegador en **`http://localhost:5000`**.
-2. Navega a la página de contacto haciendo clic en el icono de correo o visitando **`http://localhost:5000/email.html`**.
-3. Completa el formulario y presiona **"Enviar mensaje"**.
-4. ¡Listo! Verás el mensaje de confirmación en pantalla, la notificación en la consola de tu terminal y el mensaje guardado en tu archivo `data/messages.json`.
 
 ---
 
-## 📧 (Opcional) Configurar envío real de correos a tu Gmail
+## 🚀 Cómo probar en Local y Desplegar
 
-Por defecto, cada mensaje se guarda en `data/messages.json`. Si además deseas que te llegue un correo electrónico a tu bandeja de entrada:
+### 1. Ejecución Local (Live Server)
+1. Abre la carpeta del proyecto en **Visual Studio Code**.
+2. Haz clic derecho sobre `index.html` y selecciona **"Open with Live Server"**.
+3. Se abrirá automáticamente en tu navegador (ej. `http://127.0.0.1:5500/index.html`).
 
-1. Abre el archivo `.env` en la raíz del proyecto.
-2. Genera una **Contraseña de Aplicación** en tu cuenta de Google:
-   - Ve a [Seguridad de Google](https://myaccount.google.com/security).
-   - Asegúrate de tener activada la *Verificación en dos pasos*.
-   - Busca **"Contraseñas de aplicaciones"** y genera una para "Correo".
-3. Completa en tu `.env`:
-   ```env
-   EMAIL_USER=tu_correo@gmail.com
-   EMAIL_PASS=tu_password_de_aplicacion_generada
-   EMAIL_RECEIVER=maylenspeso@gmail.com
+### 2. Despliegue en GitHub Pages
+1. Haz un commit y push a tu rama principal:
+   ```bash
+   git add .
+   git commit -m "Portafolio estático optimizado para GitHub Pages"
+   git push origin main
    ```
-4. Reinicia el servidor con `npm start`.
+2. En tu repositorio de GitHub, ve a **Settings** > **Pages**.
+3. En **Source**, selecciona `Deploy from a branch` y elige la rama `main` / `root`.
+4. En pocos segundos tu web estará activa en:
+   **`https://spesomay.github.io/portafolio/`**

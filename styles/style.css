@@ -15,7 +15,9 @@
 }
 
 html {
-    overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: clip;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -24,7 +26,10 @@ body {
     font-family: var(--fuente-cuerpo);
     background-color: #f8f9fa;
     transition: background-color 0.3s ease, color 0.3s ease;
-    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    /* Se omite overflow en body para garantizar un único scroll vertical principal */
 }
 
 /* === HEADER === */
@@ -94,7 +99,6 @@ main.contenedor {
     padding-top: 75px;
     width: 100%;
     position: relative;
-    overflow: hidden;
 }
 
 section {
@@ -153,6 +157,15 @@ section {
     transition: all 0.3s ease;
     color: #3D4A5C;
     font-size: 16px;
+    flex-shrink: 0;
+}
+
+.btn-theme img {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    display: block;
+    pointer-events: none;
 }
 
 .btn-theme:hover {
@@ -183,6 +196,8 @@ section {
 .circle {
     pointer-events: none;
     z-index: 1;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .blob {
@@ -976,12 +991,27 @@ body.dark-mode .foto-personaje-limpia .foto-oscura {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
 }
 
 .card-proyecto:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+}
+
+.card-proyecto:focus-within {
+    outline: 2px solid #7EDFFF;
+    outline-offset: 2px;
+}
+
+.proyecto-img-enlace {
+    display: block;
+    width: 100%;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .proyecto-img {
@@ -1009,6 +1039,7 @@ body.dark-mode .foto-personaje-limpia .foto-oscura {
     justify-content: center;
     color: #ffffff;
     gap: 8px;
+    transition: transform 0.4s ease;
 }
 
 .proyecto-img-placeholder i {
@@ -1023,7 +1054,8 @@ body.dark-mode .foto-personaje-limpia .foto-oscura {
     letter-spacing: 1px;
 }
 
-.card-proyecto:hover .proyecto-img img {
+.card-proyecto:hover .proyecto-img img,
+.card-proyecto:hover .proyecto-img-placeholder {
     transform: scale(1.05);
 }
 
@@ -1037,6 +1069,20 @@ body.dark-mode .foto-personaje-limpia .foto-oscura {
 
 .proyecto-info h3 {
     font-size: 22px;
+}
+
+.proyecto-titulo-enlace {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.proyecto-titulo-enlace:hover {
+    color: #0284c7;
+}
+
+body.dark-mode .proyecto-titulo-enlace:hover {
+    color: #7EDFFF;
 }
 
 .proyecto-info p {
@@ -1064,6 +1110,8 @@ body.dark-mode .foto-personaje-limpia .foto-oscura {
     display: flex;
     gap: 15px;
     padding-top: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .link-btn {
@@ -1073,11 +1121,28 @@ body.dark-mode .foto-personaje-limpia .foto-oscura {
     font-size: 14px;
     font-weight: 600;
     color: var(--color-gris);
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.04);
+}
+
+.link-btn.link-demo {
+    background: linear-gradient(#fff, #fff) padding-box,
+        var(--gradiente-acento) border-box;
+    border: 1.5px solid transparent;
+    color: #1a1a1e;
+    font-weight: 700;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+    border-radius: 10px;
 }
 
 .link-btn:hover {
     color: #000;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
 
 .link-btn i {
@@ -1189,6 +1254,14 @@ body.dark-mode .proyecto-tags span {
 
 body.dark-mode .link-btn {
     color: #b0b8c4;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+body.dark-mode .link-btn.link-demo {
+    background: linear-gradient(#1a1a1e, #1a1a1e) padding-box,
+        var(--gradiente-acento) border-box;
+    border: 1.5px solid transparent;
+    color: #FFEAB5;
 }
 
 body.dark-mode .link-btn:hover {
@@ -1351,8 +1424,13 @@ body.dark-mode .footer-copy {
     .blob2,
     .blob3,
     .blob4,
-    .blob5 {
-        display: none;
+    .blob5,
+    .blob6,
+    .circle,
+    .circle1,
+    .circle2,
+    .blob-svg {
+        display: none !important;
     }
 
     .foto-personaje-limpia {

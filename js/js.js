@@ -18,39 +18,92 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // ==========================================
-  // 2. MODO OSCURO / MODO CLARO (CON PERSISTENCIA)
+  // 2. MODO OSCURO / MODO CLARO (CON PERSISTENCIA Y COMPATIBILIDAD GITHUB PAGES)
   // ==========================================
   const themeToggleBtn = document.getElementById("theme-toggle");
   const themeIcon = document.getElementById("theme-icon");
+  const fotoClara = document.querySelector(".foto-clara");
+  const fotoOscura = document.querySelector(".foto-oscura");
 
-  const savedTheme = localStorage.getItem("portfolio-theme");
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  /**
+   * Aplica el tema seleccionado asegurando contraste, ícono correcto
+   * y visibilidad de las imágenes del tema sin rutas rotas.
+   */
+  function applyTheme(theme) {
+    const isDark = theme === "dark";
 
-  if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
-    document.body.classList.add("dark-mode");
-    if (themeIcon) {
-      themeIcon.classList.remove("fa-moon");
-      themeIcon.classList.add("fa-sun");
-    }
-  }
+    if (isDark) {
+      document.body.classList.add("dark-mode");
 
-  if (themeToggleBtn) {
-    themeToggleBtn.addEventListener("click", () => {
-      const isDark = document.body.classList.toggle("dark-mode");
-
+      // Actualización accesible de ícono o imagen en el botón
       if (themeIcon) {
-        if (isDark) {
+        if (themeIcon.tagName.toLowerCase() === "img") {
+          themeIcon.src = "img/sun.svg";
+          themeIcon.alt = "Modo claro";
+        } else {
           themeIcon.classList.remove("fa-moon");
           themeIcon.classList.add("fa-sun");
+        }
+      }
+
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute("title", "Cambiar a modo claro");
+        themeToggleBtn.setAttribute("aria-label", "Cambiar a modo claro");
+      }
+
+      // Sincronización de ilustración "Sobre mí"
+      if (fotoClara && fotoOscura) {
+        fotoClara.style.display = "none";
+        fotoOscura.style.display = "block";
+      }
+    } else {
+      document.body.classList.remove("dark-mode");
+
+      if (themeIcon) {
+        if (themeIcon.tagName.toLowerCase() === "img") {
+          themeIcon.src = "img/moon.svg";
+          themeIcon.alt = "Modo oscuro";
         } else {
           themeIcon.classList.remove("fa-sun");
           themeIcon.classList.add("fa-moon");
         }
       }
 
-      localStorage.setItem("portfolio-theme", isDark ? "dark" : "light");
+      if (themeToggleBtn) {
+        themeToggleBtn.setAttribute("title", "Cambiar a modo oscuro");
+        themeToggleBtn.setAttribute("aria-label", "Cambiar a modo oscuro");
+      }
+
+      if (fotoClara && fotoOscura) {
+        fotoClara.style.display = "block";
+        fotoOscura.style.display = "none";
+      }
+    }
+
+    localStorage.setItem("portfolio-theme", theme);
+  }
+
+  // Leer estado inicial desde localStorage o preferencia del sistema
+  const savedTheme = localStorage.getItem("portfolio-theme");
+  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initialTheme = savedTheme ? savedTheme : (prefersDark ? "dark" : "light");
+
+  applyTheme(initialTheme);
+
+  // Alternar tema al hacer clic
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      const currentIsDark = document.body.classList.contains("dark-mode");
+      applyTheme(currentIsDark ? "light" : "dark");
     });
   }
+
+  // Escuchar cambios de preferencia del sistema si el usuario no ha forzado un tema
+  window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (e) => {
+    if (!localStorage.getItem("portfolio-theme")) {
+      applyTheme(e.matches ? "dark" : "light");
+    }
+  });
 
   // ==========================================
   // 3. DESPLAZAMIENTO SUAVE (HEADER Y BOTONES INTERNOS)
@@ -98,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       e.preventDefault();
 
-      // Sincroniza el subrayado del menú superior aunque hagas clic desde "Ver Proyectos"
+      // Sincroniza el subrayado del menú superior
       headerLinks.forEach((l) => {
         l.classList.remove("activo");
         if (l.getAttribute("href") === targetId) {
@@ -135,6 +188,26 @@ document.addEventListener("DOMContentLoaded", () => {
       link.classList.remove("activo");
       if (link.getAttribute("href") === `#${currentSection}`) {
         link.classList.add("activo");
+      }
+    });
+  });
+
+  // ==========================================
+  // 5. REDIRECCIÓN INTERACTIVA DE PROYECTOS (CARD CLICK)
+  // ==========================================
+  const projectCards = document.querySelectorAll(".card-proyecto[data-demo-url]");
+
+  projectCards.forEach((card) => {
+    card.addEventListener("click", (e) => {
+      // Si el usuario hizo clic en un enlace o botón interno (como el botón de Código GitHub),
+      // dejamos que el enlace propio maneje la navegación sin interferencia
+      if (e.target.closest("a") || e.target.closest("button")) {
+        return;
+      }
+
+      const demoUrl = card.getAttribute("data-demo-url");
+      if (demoUrl && demoUrl !== "#") {
+        window.open(demoUrl, "_blank", "noopener,noreferrer");
       }
     });
   });

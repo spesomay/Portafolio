@@ -18,13 +18,29 @@
 <body>
 
   <header>
-    <a href="index.html#inicio" class="btn-elegant letra2">Inicio</a>
-    <a href="index.html#contenedor-info" class="btn-elegant letra2">Sobre mi</a>
-    <a href="index.html#lenguajes" class="btn-elegant letra2">Lenguajes</a>
-    <a href="index.html#proyectos" class="btn-elegant letra2">Proyectos</a>
-    <button id="theme-toggle" class="btn-theme" title="Modo oscuro / claro" aria-label="Cambiar tema">
-      <i id="theme-icon" class="fas fa-moon"></i>
-    </button>
+    <a href="index.html#inicio" class="header-logo">
+      <span class="logo-badge">&lt;MS /&gt;</span>
+      <span class="logo-texto letra1">Maylen Speso</span>
+    </a>
+
+    <nav class="header-nav">
+      <a href="index.html#inicio" class="btn-elegant letra2">Inicio</a>
+      <a href="index.html#contenedor-info" class="btn-elegant letra2">Sobre mí</a>
+      <a href="index.html#lenguajes" class="btn-elegant letra2">Habilidades</a>
+      <a href="index.html#proyectos" class="btn-elegant letra2">Proyectos</a>
+    </nav>
+
+    <div class="header-acciones">
+      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/maylen-speso-a3630332b/" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <button id="theme-toggle" class="btn-theme" title="Modo oscuro / claro" aria-label="Cambiar tema">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
+    </div>
   </header>
 
   <svg class="blob-svg" viewBox="0 0 500 500" style="position: absolute; width: 0; height: 0; overflow: hidden;">
@@ -52,8 +68,11 @@
         <p class="letra2">¿Tenés una propuesta, consulta o querés trabajar juntos? Dejame un mensaje.</p>
       </div>
 
-      <!-- Formulario conectado al Backend de Node.js / Express -->
-      <form id="formulario-contacto" action="/api/contact" method="POST" class="formulario-contacto">
+      <!-- Formulario de contacto 100% estático (compatible con GitHub Pages y Live Server) -->
+      <form id="formulario-contacto" action="https://formsubmit.co/maylenspeso@gmail.com" method="POST" class="formulario-contacto">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nuevo mensaje desde tu Portafolio Web (GitHub Pages)">
+        <input type="hidden" name="_template" value="table">
         
         <div class="grupo-campo">
           <label for="nombre" class="letra2">Nombre</label>
