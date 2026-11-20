@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Maylen Speso</title>
+  
+  <!-- Tipografías y FontAwesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- CSS global y CSS exclusivo de contacto -->
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/email.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html#inicio" class="btn-elegant letra2">Inicio</a>
+    <a href="index.html#contenedor-info" class="btn-elegant letra2">Sobre mi</a>
+    <a href="index.html#lenguajes" class="btn-elegant letra2">Lenguajes</a>
+    <a href="index.html#proyectos" class="btn-elegant letra2">Proyectos</a>
+    <button id="theme-toggle" class="btn-theme" title="Modo oscuro / claro" aria-label="Cambiar tema">
+      <i id="theme-icon" class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <svg class="blob-svg" viewBox="0 0 500 500" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+    <path id="blob"
+      d="M421.5,303Q380,356,332,390.5Q284,425,229,417Q174,409,123,374.5Q72,340,63.5,271.5Q55,203,99,147Q143,91,212.5,72.5Q282,54,344.5,95Q407,136,432.5,193Q458,250,421.5,303Z">
+    </path>
+  </svg>
+
+  <!-- Formas decorativas -->
+  <div class="blob blob1"></div>
+  <div class="blob blob2"></div>
+  <div class="blob blob3"></div>
+  <div class="blob blob4"></div>
+  <div class="blob blob5"></div>
+  <div class="blob blob6"></div>
+
+  <!-- Círculos pequeños -->
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+
+  <main class="contenedor-contacto">
+    <div class="contacto-card">
+      <div class="contacto-cabecera">
+        <h1 class="letra1">Ponete en contacto</h1>
+        <p class="letra2">¿Tenés una propuesta, consulta o querés trabajar juntos? Dejame un mensaje.</p>
+      </div>
+
+      <!-- Formulario conectado al Backend de Node.js / Express -->
+      <form id="formulario-contacto" action="/api/contact" method="POST" class="formulario-contacto">
+        
+        <div class="grupo-campo">
+          <label for="nombre" class="letra2">Nombre</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="email" class="letra2">Correo electrónico</label>
+          <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+        </div>
+
+        <div class="grupo-campo">
+          <label for="asunto" class="letra2">Asunto</label>
+          <input type="text" id="asunto" name="asunto" placeholder="Motivo de tu mensaje (ej. Proyecto o Propuesta)">
+        </div>
+
+        <div class="grupo-campo">
+          <label for="mensaje" class="letra2">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje acá..." required></textarea>
+        </div>
+
+        <!-- Banner de respuesta del Backend -->
+        <div id="form-alerta" class="form-alerta"></div>
+
+        <button type="submit" id="btn-enviar" class="btn-enviar letra2">
+          <span>Enviar mensaje</span>
+          <i class="fas fa-paper-plane"></i>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <script src="js/js.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+
+</html>

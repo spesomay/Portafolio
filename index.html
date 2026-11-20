@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Portafolio | Maylen Speso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@400;700&family=Poppins:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body id="inicio">
+
+<header>
+    <a href="#inicio" class="header-logo">
+      <span class="logo-badge">&lt;MS /&gt;</span>
+      <span class="logo-texto letra1">Maylen Speso</span>
+    </a>
+
+    <nav class="header-nav">
+      <a href="#inicio" class="btn-elegant activo letra2">Inicio</a>
+      <a href="#contenedor-info" class="btn-elegant letra2">Sobre mí</a>
+      <a href="#lenguajes" class="btn-elegant letra2">Habilidades</a>
+      <a href="#proyectos" class="btn-elegant letra2">Proyectos</a>
+
+    </nav>
+
+    <div class="header-acciones">
+      <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link header-icon" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <button id="theme-toggle" class="btn-theme" title="Modo oscuro / claro" aria-label="Cambiar tema">
+        <i id="theme-icon" class="fas fa-moon"></i>
+      </button>
+    </div>
+  </header>
+
+  <main class="contenedor">
+    <svg class="blob-svg" viewBox="0 0 500 500" style="position: absolute; width: 0; height: 0; overflow: hidden;">
+      <path id="blob"
+        d="M421.5,303Q380,356,332,390.5Q284,425,229,417Q174,409,123,374.5Q72,340,63.5,271.5Q55,203,99,147Q143,91,212.5,72.5Q282,54,344.5,95Q407,136,432.5,193Q458,250,421.5,303Z">
+      </path>
+    </svg>
+
+    <!-- Formas decorativas originales -->
+    
+    <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+    <div class="blob blob5"></div>
+    <div class="blob blob6"></div>
+
+    <!-- Círculos pequeños -->
+    <div class="circle circle1"></div>
+    <div class="circle circle2"></div>
+
+    <!-- SECCIÓN 1: INICIO (HERO) -->
+    <section id="inicio" class="sobreMi hero-nuevo">
+      
+      <!-- Columna Izquierda: Info, Roles y Tus Botones -->
+      <div class="derecha hero-info">
+        <div class="informacion">
+          
+          <div class="badge-disponible">
+            <span class="punto-verde"></span>
+            <span>Disponible para nuevos proyectos / Junior Full-Stack</span>
+          </div>
+
+         
+          <h1 class="letra1 profesion1">Maylen <span class="texto-gradiente">Speso</span></h1>
+
+          <div class="roles-pills">
+          <!---  <span class="rol-pill rol-destacado">
+              <i class="fas fa-layer-group"></i> Desarrolladora Web Full-Stack
+            </span>
+            <span class="rol-pill">
+              <i class="fas fa-graduation-cap"></i> Estudiante de Lic. en Sistemas
+            </span>
+          </div>-->
+
+          <p class="bio-hero letra2">
+            Especializada en construir experiencias digitales intuitivas, atractivas y escalables. Combino una sólida base técnica en lógica de programación con una pasión continua por las tecnologías modernas del ecosistema JavaScript.
+          </p>
+
+          <!-- Tus botones intactos -->
+          <div class="cont">
+            <a href="#proyectos" class="descarga-container">
+              <span class="descarga-link">
+                <span>Ver Proyectos</span>
+                <i class="fas fa-arrow-right"></i>
+              </span>
+            </a>
+
+            <div class="descarga-container">
+              <a href="pdf/Speso Maylen -cv.pdf" download="Speso Maylen -cv.pdf" class="descarga-link" title="Descargar CV">
+                <i class="fas fa-download"></i>
+                <span>Descargar CV</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Fila de redes abajo -->
+          <div class="conectemos-fila">
+            <span class="conectemos-label">CONECTEMOS:</span>
+            <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link" title="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="contacto.html" class="social-link" title="Contacto">
+              <i class="fas fa-envelope"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Columna Derecha: Tu foto intacta + Chips flotantes -->
+      <div class="izquierda hero-foto-contenedor">
+        <div class="foto-wrapper">
+          <img src="img/yo2024.jpg" alt="Maylen Speso">
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SECCIÓN 2: SOBRE MÍ -->
+    <!-- ================= SECCIÓN 2: SOBRE MÍ Y ENFOQUE ================= -->
+    <section id="contenedor-info" class="contenedor-info">
+      
+      <div class="sobre-cabecera">
+       <!-- <div class="badge-stack">
+          <i class="fas fa-user"></i>
+          <span>CONÓCEME MÁS</span>
+        </div>-->
+        <h2 class="letra1">Sobre mí & <span class="texto-gradiente">Enfoque de Trabajo</span></h2>
+        <p class="letra2">Cómo pienso, cómo resuelvo problemas y qué aporto en cada proyecto.</p>
+      </div>
+
+      <div class="sobre-contenido-grid">
+        
+        <!-- Columna Izquierda: Ilustración SIN cuadrado + Tarjeta de Formación -->
+        <div class="sobre-col-izq">
+          <div class="foto-personaje-limpia">
+            <img src="img/hola.png" alt="Ilustración Maylen" class="foto-clara">
+            <img src="img/hola-dark.png" alt="Ilustración Maylen modo oscuro" class="foto-oscura">
+          </div>
+
+          <div class="card-formacion">
+            <div class="formacion-item">
+              <div class="formacion-icono"><i class="fas fa-graduation-cap"></i></div>
+              <div>
+                <h4>Formación Técnica:</h4>
+                <p>Egresada Escuela Técnica N°3 (Programación)</p>
+              </div>
+            </div>
+
+            <div class="formacion-item">
+              <div class="formacion-icono"><i class="fas fa-university"></i></div>
+              <div>
+                <h4>Carrera Universitaria:</h4>
+                <p>Estudiante de Licenciatura en Sistemas</p>
+              </div>
+            </div>
+
+            <div class="formacion-item">
+              <div class="formacion-icono"><i class="fas fa-lightbulb"></i></div>
+              <div>
+                <h4>Mentalidad:</h4>
+                <p>Pragmatismo, código limpio y aprendizaje constante</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Textos y 4 tarjetas de Enfoque -->
+        <div class="sobre-col-der">
+          <h3 class="letra1 subtitulo-bio">
+            Apasionada por la intersección entre la robustez de la arquitectura backend y la elegancia del frontend.
+          </h3>
+
+          <p class="letra2 parrafo-bio">
+            Mi camino en la tecnología comenzó en la <strong>Escuela Técnica N°3</strong> con especialidad en <strong>Programación</strong>. Esta formación me otorgó una comprensión profunda de la lógica computacional, estructuras de datos y metodologías para abordar desafíos complejos de manera estructurada.
+          </p>
+
+          <p class="letra2 parrafo-bio">
+            Actualmente profundizo mis conocimientos como <strong>Estudiante de la Licenciatura en Sistemas</strong>, incorporando conceptos avanzados de ingeniería de software, arquitectura de sistemas y trabajo colaborativo.
+          </p>
+
+          <p class="letra2 parrafo-bio">
+            Mi <strong>enfoque pragmático</strong> me impulsa a priorizar soluciones que aporten verdadero valor: código legible, componentes reutilizables, interfaces accesibles y sistemas mantenibles a largo plazo.
+          </p>
+
+          <div class="enfoque-grid-4">
+            <div class="enfoque-card">
+              <div class="enfoque-titulo">
+                <i class="fas fa-puzzle-piece"></i>
+                <h4>Resolución Pragmática</h4>
+              </div>
+              <p>Descomposición de problemas complejos en soluciones técnicas claras y eficientes.</p>
+            </div>
+
+            <div class="enfoque-card">
+              <div class="enfoque-titulo">
+                <i class="fas fa-magic"></i>
+                <h4>Criterio UX/UI</h4>
+              </div>
+              <p>Cuidado milimétrico del diseño, adaptabilidad multidispositivo y accesibilidad web.</p>
+            </div>
+
+            <div class="enfoque-card">
+              <div class="enfoque-titulo">
+                <i class="fas fa-code-branch"></i>
+                <h4>Clean Code & Git</h4>
+              </div>
+              <p>Buenas prácticas, control de versiones ordenado y arquitectura modular preparada para crecer.</p>
+            </div>
+
+            <div class="enfoque-card">
+              <div class="enfoque-titulo">
+                <i class="fas fa-rocket"></i>
+                <h4>Evolución Continua</h4>
+              </div>
+              <p>Curiosidad activa y rápida asimilación de nuevas herramientas, librerías y estándares.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 3: TECNOLOGÍAS, HABILIDADES Y HERRAMIENTAS -->
+    <!-- ================= SECCIÓN 3: HABILIDADES Y HERRAMIENTAS ================= -->
+    <section id="lenguajes" class="contenedor-lenguajes">
+      
+      <div class="habilidades-cabecera">
+        <div class="badge-stack">
+          <i class="fas fa-laptop-code"></i>
+          <span>STACK TECNOLÓGICO</span>
+        </div>
+        <h2 class="letra1">Habilidades & <span class="texto-gradiente">Herramientas</span></h2>
+        <p class="letra2">Tecnologías con las que diseño, construyo y despliego aplicaciones web.</p>
+      </div>
+
+      <div class="skills-categories-grid">
+        
+        <!-- COLUMNA 1: FRONT-END -->
+        <div class="skills-category-box">
+          <div class="skills-category-header">
+            <div class="cat-icon-box icon-front">
+              <i class="fas fa-desktop"></i>
+            </div>
+            <div class="cat-title-group">
+              <h3>Front-End</h3>
+              <p>Interfaces reactivas y modernas</p>
+            </div>
+          </div>
+
+          <div class="skills-items-container">
+            <div class="skill-tag-pill">
+              <i class="fab fa-react"></i>
+              <div class="skill-text">
+                <span class="skill-name">React.js</span>
+                <small class="skill-desc">Hooks / Componentes</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fab fa-js"></i>
+              <div class="skill-text">
+                <span class="skill-name">JavaScript</span>
+                <small class="skill-desc">ES6+ / Asincronía</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fab fa-html5"></i>
+              <div class="skill-text">
+                <span class="skill-name">HTML5</span>
+                <small class="skill-desc">Semántico / Accesible</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fab fa-css3-alt"></i>
+              <div class="skill-text">
+                <span class="skill-name">CSS3</span>
+                <small class="skill-desc">Flexbox / Grid / Anim</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: BACK-END & DB -->
+        <div class="skills-category-box">
+          <div class="skills-category-header">
+            <div class="cat-icon-box icon-back">
+              <i class="fas fa-server"></i>
+            </div>
+            <div class="cat-title-group">
+              <h3>Back-End & DB</h3>
+              <p>Lógica, APIs y persistencia</p>
+            </div>
+          </div>
+
+          <div class="skills-items-container">
+            <div class="skill-tag-pill">
+              <i class="fab fa-node-js"></i>
+              <div class="skill-text">
+                <span class="skill-name">Node.js</span>
+                <small class="skill-desc">Runtime & Servidores</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fas fa-network-wired"></i>
+              <div class="skill-text">
+                <span class="skill-name">Express.js</span>
+                <small class="skill-desc">APIs RESTful</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fas fa-database"></i>
+              <div class="skill-text">
+                <span class="skill-name">MongoDB</span>
+                <small class="skill-desc">NoSQL / Mongoose</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fab fa-python"></i>
+              <div class="skill-text">
+                <span class="skill-name">Python</span>
+                <small class="skill-desc">Scripting & Datos</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA 3: HERRAMIENTAS -->
+        <div class="skills-category-box">
+          <div class="skills-category-header">
+            <div class="cat-icon-box icon-tools">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="cat-title-group">
+              <h3>Herramientas</h3>
+              <p>Productividad y control</p>
+            </div>
+          </div>
+
+          <div class="skills-items-container">
+            <div class="skill-tag-pill">
+              <i class="fab fa-git-alt"></i>
+              <div class="skill-text">
+                <span class="skill-name">Git</span>
+                <small class="skill-desc">Control de versiones</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fab fa-github"></i>
+              <div class="skill-text">
+                <span class="skill-name">GitHub</span>
+                <small class="skill-desc">Flujos & Repositorios</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fas fa-mobile-alt"></i>
+              <div class="skill-text">
+                <span class="skill-name">Responsive</span>
+                <small class="skill-desc">Mobile-First</small>
+              </div>
+            </div>
+
+            <div class="skill-tag-pill">
+              <i class="fas fa-rocket"></i>
+              <div class="skill-text">
+                <span class="skill-name">Postman</span>
+                <small class="skill-desc">Pruebas de APIs</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN 4: PROYECTOS -->
+    <section id="proyectos" class="contenedor-proyectos">
+      <div class="proyectos-cabecera">
+        <h2 class="letra1">Mis Proyectos</h2>
+        <p class="letra2">Algunos de los trabajos y aplicaciones que estuve desarrollando.</p>
+      </div>
+
+      <div class="grid-proyectos">
+        <!-- Proyecto 1: App-Mamá -->
+        <article class="card-proyecto">
+          <div class="proyecto-img">
+            <div class="proyecto-img-placeholder">
+              <i class="fas fa-cake-candles"></i>
+              <span>App-Mamá</span>
+            </div>
+          </div>
+          <div class="proyecto-info">
+            <h3 class="letra1">APP-MAMÁ</h3>
+            <p class="letra2">
+              Plataforma web full-stack de comercio electrónico y gestión de pedidos personalizada para un negocio de repostería. Incluye catálogo interactivo, carrito dinámico y panel de control de pedidos.
+            </p>
+            <div class="proyecto-tags">
+              <span>React.js</span>
+              <span>Node.js</span>
+              <span>Express</span>
+              <span>MongoDB</span>
+            </div>
+            <div class="proyecto-links">
+              <a href="email.html" class="link-btn" title="Consultar demo">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+              <a href="https://github.com/tu-usuario/app-mama" target="_blank" rel="noopener noreferrer" class="link-btn" title="Ver código en GitHub">
+                <i class="fab fa-github"></i> Código
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 2: UrbanaGest -->
+        <article class="card-proyecto">
+          <div class="proyecto-img">
+            <img src="img/UrbanaGest.png" alt="Vista previa UrbanaGest">
+          </div>
+          <div class="proyecto-info">
+            <h3 class="letra1">URBANA GEST</h3>
+            <p class="letra2">
+              Plataforma web para gestionar trámites municipales, solicitar turnos, realizar reclamos barriales y consultar noticias y eventos de forma simple, rápida y accesible.
+            </p>
+            <div class="proyecto-tags">
+              <span>JavaScript</span>
+              <span>HTML5</span>
+              <span>CSS3</span>
+              <span>UX/UI</span>
+            </div>
+            <div class="proyecto-links">
+              <a href="email.html" class="link-btn" title="Consultar demo">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+              <a href="https://github.com/tu-usuario/urbanagest" target="_blank" rel="noopener noreferrer" class="link-btn" title="Ver código en GitHub">
+                <i class="fab fa-github"></i> Código
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Proyecto 3: MOOD -->
+        <article class="card-proyecto">
+          <div class="proyecto-img">
+            <img src="img/MOOD.png" alt="Vista previa MOOD">
+          </div>
+          <div class="proyecto-info">
+            <h3 class="letra1">MOOD</h3>
+            <p class="letra2">
+              Plataforma web que recomienda eventos y actividades en distintas partes del país según el estado de ánimo y las preferencias del usuario.
+            </p>
+            <div class="proyecto-tags">
+              <span>Python</span>
+              <span>SQLite</span>
+              <span>JavaScript</span>
+            </div>
+            <div class="proyecto-links">
+              <a href="email.html" class="link-btn" title="Consultar demo">
+                <i class="fas fa-external-link-alt"></i> Demo
+              </a>
+              <a href="https://github.com/tu-usuario/mood" target="_blank" rel="noopener noreferrer" class="link-btn" title="Ver código en GitHub">
+                <i class="fab fa-github"></i> Código
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- FOOTER ORIGINAL -->
+    <footer class="footer">
+      <div class="footer-contenido">
+        <p class="letra1 footer-nombre">Maylen Speso</p>
+        <p class="letra2 footer-rol">Desarrolladora Web Full-Stack | Estudiante de Licenciatura en Sistemas</p>
+
+        <div class="footer-redes">
+          <a href="https://github.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-link"
+            title="GitHub">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/maylen-speso-a3630332b/?isSelfProfile=true" target="_blank"
+            rel="noopener noreferrer" class="social-link" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="email.html" class="social-link" title="Email">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+
+        <p class="letra2 footer-copy">
+          © 2026 Maylen Speso. Diseñado y desarrollado con dedicación.
+        </p>
+      </div>
+    </footer>
+
+  </main>
+
+  <script src="js/js.js"></script>
+
+</body>
+
+</html>

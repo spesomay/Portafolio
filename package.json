@@ -1,0 +1,25 @@
+{
+  "name": "portafolio-maylen-speso",
+  "version": "1.0.0",
+  "description": "Portafolio web personal y servidor backend en Node.js/Express de Maylen Speso",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": [
+    "portfolio",
+    "fullstack",
+    "express",
+    "nodejs",
+    "javascript"
+  ],
+  "author": "Maylen Speso",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "nodemailer": "^6.9.13"
+  }
+}
