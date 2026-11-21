@@ -247,7 +247,7 @@ section {
 .blob5 {
     width: 280px;
     height: 170px;
-    bottom: -60px;
+    bottom: 10px;
     right: 3px;
     border-radius: 55% 35% 65% 40% / 65% 50% 35% 50%;
 }
@@ -255,7 +255,7 @@ section {
 .blob6 {
     width: 150px;
     height: 120px;
-    bottom: -35px;
+    bottom: 10px;
     left: 18px;
     opacity: 0.25;
     background-image: radial-gradient(#bfbfbf 1.6px, transparent 1.6px);
@@ -280,7 +280,7 @@ section {
 .circle2 {
     width: 100px;
     height: 60px;
-    bottom: -20px;
+    bottom: 10px;
     left: 330px;
     opacity: 0.5;
     background-image: radial-gradient(#f7b2b2 1.5px, transparent 1.5px);
@@ -1276,12 +1276,15 @@ body.dark-mode .circle {
 /* === FOOTER === */
 .footer {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 40px 20px;
     background-color: #ffffff;
-    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
     margin-top: 60px;
     position: relative;
-    z-index: 2;
+    z-index: 10;
+    overflow: hidden;
 }
 
 .footer-contenido {
@@ -1292,30 +1295,76 @@ body.dark-mode .circle {
     align-items: center;
     gap: 12px;
     text-align: center;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-nombre {
     font-size: 20px;
     font-weight: 700;
+    color: #18181b;
 }
 
 .footer-rol {
     font-size: 14px;
-    color: var(--color-gris);
+    color: var(--color-gris, #52525b);
 }
 
 .footer-redes {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 14px;
     margin: 10px 0;
 }
 
-.footer-copy {
-    font-size: 13px;
-    color: var(--color-gris);
-    opacity: 0.8;
+/* Asegura buen contraste y visibilidad en íconos/enlaces de redes y correo */
+.footer-redes a,
+.footer-redes button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    color: #1f2937;
+    background-color: #f8fafc;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    text-decoration: none;
+    transition: transform 0.2s ease, background-color 0.2s ease, color 0.2s ease;
 }
 
+.footer-redes a i,
+.footer-redes button i {
+    font-size: 19px;
+    line-height: 1;
+    color: currentColor;
+    -webkit-text-fill-color: currentColor;
+    background: none;
+}
+
+.footer-redes a svg,
+.footer-redes button svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    stroke: currentColor;
+}
+
+.footer-redes a:hover,
+.footer-redes button:hover {
+    transform: translateY(-2px);
+    background-color: #f1f5f9;
+}
+
+.footer-copy {
+    font-size: 13px;
+    color: var(--color-gris, #52525b);
+    opacity: 0.9;
+}
+
+/* === MODO OSCURO === */
 body.dark-mode .footer {
     background-color: #121214;
     border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1328,6 +1377,24 @@ body.dark-mode .footer-nombre {
 body.dark-mode .footer-rol,
 body.dark-mode .footer-copy {
     color: #b0b8c4;
+}
+
+body.dark-mode .footer-redes a,
+body.dark-mode .footer-redes button {
+    color: #f4f4f5;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-color: rgba(255, 255, 255, 0.14);
+}
+
+body.dark-mode .footer-redes a i,
+body.dark-mode .footer-redes button i {
+    color: #f4f4f5;
+    -webkit-text-fill-color: #f4f4f5;
+}
+
+body.dark-mode .footer-redes a:hover,
+body.dark-mode .footer-redes button:hover {
+    background-color: rgba(255, 255, 255, 0.14);
 }
 
 /* === RESPONSIVE (CELULARES Y TABLETS) === */
